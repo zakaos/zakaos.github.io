@@ -1,0 +1,116 @@
+<html>
+	<head>
+		
+		<script>
+			window.onload=function(){
+				b=document.getElementById("bd");
+				
+			load();	
+	}
+	menu=function(){
+		cls();
+		b.style.backgroundColor="black";
+		h=document.createElement("h1");
+		h.innerHTML="This is a stupid greater than game title!<br> High Score: "+hs;
+		h.style.color="white";
+		b.appendChild(h);
+		startBtn=document.createElement("button");
+		b.style.margin="auto";
+		startBtn.innerHTML="START";
+		startBtn.style.color="white";
+		startBtn.style.backgroundColor="black";
+		startBtn.style.margin="auto";
+		startBtn.style.padding="64px 44px";
+	
+		b.appendChild(startBtn);		
+		startBtn.onclick=game;
+	}
+	hscheck=function(){
+		if (correctans>hs){
+			hs=correctans
+		}
+	}
+	
+	gt= function(){
+		if (onent>lth){
+			alert("yep");correctans++;game();
+		}
+		else{alert("nope");hscheck();correctans=0;menu()}
+	}
+	lt=function(){
+		if (onent<lth){
+			alert("yep");correctans++;game();
+		}
+		else{alert("nope");hscheck();correctans=0;menu();}
+	}
+	game=function(){
+	//	alert("ag");
+		cls()
+		b.style.backgroundColor="blue";
+		b.style.padding="32px"
+		onent=Math.random()*10;
+		
+		
+		lth=Math.random()*10;
+	mth=Math.random()*10 ;
+	onent=Math.floor(onent);
+	lth=Math.floor(lth);
+		//alert(lth+" - "+onent+" - "+mth)
+		
+		
+		dd=document.createElement("div");
+		dd.style.padding="12px";
+		dd.style.border="4px solid white";
+		dd.style.color="white";
+	//	dd.innerHTML=lth+" "+onent+" "+mth;
+		dd.innerHTML+=" <br> Is "+onent+" Greater or less than "+ lth +" ?<br> Correct Answers: "+correctans
+		b.appendChild(dd);
+		cd=document.createElement("div");
+		ltbut=document.createElement("button");
+		ltbut.innerHTML="<";
+		ltbut.onclick=lt;
+		ltbut.style.width="50%"
+		ltbut.style.height="50%"
+		ltbut.style.fontSize="64px"
+		rtbut=document.createElement("button");
+		rtbut.innerHTML=">"
+		rtbut.style.width="50%"
+		rtbut.style.height="50%"
+		rtbut.style.fontSize="64px"
+		rtbut.onclick=gt;
+		cd.style.padding="12px";
+		cd.appendChild(ltbut);
+		cd.appendChild(rtbut);
+		b.appendChild(cd);
+		//b.appendChild(ltbut);
+	}
+	cls=function(){
+		b.innerHTML="";
+	}
+	upd= function(){
+		b.innerHTML+="*"+j
+	
+	}
+		load =function(){
+		//	alert("loaded"+b)
+		hs=0;
+		
+		correctans=0
+		j=0
+		b.innerHTML="LOADING..."
+		tim=	window.setInterval(function(){
+				j++;
+				upd();
+				if(j==5){window.clearInterval(tim);
+				menu();
+				}				},1000)
+				
+		}
+			</script>
+		</head>
+		
+		<body id="bd">
+			
+		</body>
+	
+</html>
