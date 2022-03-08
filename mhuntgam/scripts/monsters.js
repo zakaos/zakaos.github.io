@@ -1,0 +1,27 @@
+monsters=[
+spider={
+	name:'spider',
+	hp:8,
+atk:8,
+def:2
+},
+rat={
+	name:'rat',
+	hp:5,
+	atk:5,
+	def:4
+},
+crab={
+	name:'crab',
+	hp:8,
+	atk:6,
+	def:6
+},
+
+monkey={
+	name:'monkey',
+	hp:6,
+	atk:6,
+	def:2
+},
+]
